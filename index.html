@@ -57,7 +57,11 @@
 
     <div id="daten" class="inhalt">
         <h1>Offizielle Datenbank</h1>
-        <p>Bitte geben Sie ihren Dienstanmeldungscode ein, um die Datenbank zu starten</p>
+        <p>Bitte geben Sie ihren Dienstanmeldungscode ein, um die Datenbank zu starten:</p>
+        <input type="password" id="code" placeholder="Dienstanmeldungscode">
+        <button onclick="pruefeCode()">Anmeldung</button>
+
+        <p id="meldung"></p>
     </div>
 
     <div id="email" class="inhalt">
@@ -79,6 +83,22 @@
             document.getElementById(tabName).classList.add("aktiv");
         }
     </script>
+        function pruefeCode() {
 
+            const eingegebenerCode = document.getElementById("code").value;
+            const richtigerCode = "12345";
+
+            if (eingegebenerCode === richtigerCode) {
+
+                // Zugang erlaubt
+                window.location.href = "willkommen.html";
+
+            } else {
+
+                // Zugang verweigert
+                document.getElementById("meldung").textContent =
+                    "Zugang nicht gestattet";
+            }
+        }
 </body>
 </html>
