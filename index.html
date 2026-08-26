@@ -82,7 +82,6 @@
             // Angeclickten Inhalt anzeigen
             document.getElementById(tabName).classList.add("aktiv");
         }
-    </script>
         function pruefeCode() {
 
             const eingegebenerCode = document.getElementById("code").value;
@@ -93,12 +92,15 @@
                 // Zugang erlaubt
                 window.location.href = "willkommen.html";
 
-            } else {
+            } 
+            else {
 
                 // Zugang verweigert
                 document.getElementById("meldung").textContent =
                     "Zugang nicht gestattet";
             }
         }
+    </script>
+
 </body>
 </html>
