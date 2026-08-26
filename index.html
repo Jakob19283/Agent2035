@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Reiter-Leiste */
+        .tabs {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            margin-right: 5px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .tab:hover {
+            background-color: #777;
+        }
+
+        /* Inhalte der Reiter */
+        .inhalt {
+            display: none;
+            padding: 30px;
+        }
+
+        /* Nur der aktive Reiter wird angezeigt */
+        .aktiv {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <button class="tab" onclick="zeigeTab('start')">Start</button>
+        <button class="tab" onclick="zeigeTab('ueber')">Über mich</button>
+        <button class="tab" onclick="zeigeTab('kontakt')">Kontakt</button>
+    </div>
+
+    <div id="start" class="inhalt aktiv">
+        <h1>Start</h1>
+        <p>Willkommen auf meiner Webseite!</p>
+    </div>
+
+    <div id="ueber" class="inhalt">
+        <h1>Über mich</h1>
+        <p>Hier stehen Informationen über mich.</p>
+    </div>
+
+    <div id="kontakt" class="inhalt">
+        <h1>Kontakt</h1>
+        <p>Hier findest du meine Kontaktdaten.</p>
+    </div>
+
+    <script>
+        function zeigeTab(tabName) {
+
+            // Alle Inhalte ausblenden
+            let inhalte = document.getElementsByClassName("inhalt");
+
+            for (let i = 0; i < inhalte.length; i++) {
+                inhalte[i].classList.remove("aktiv");
+            }
+
+            // Angeclickten Inhalt anzeigen
+            document.getElementById(tabName).classList.add("aktiv");
+        }
+    </script>
+
+</body>
+</html>
