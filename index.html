@@ -5,36 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent in 2035</title>
     <style>
-      body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
         }
-
+    .navigation {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-right: 20px;
+    }
         /* Reiter-Leiste */
-        .tabs {
+    .tabs {
             background-color: white;
             padding: 10px;
         }
 
-        .tab {
-            padding: 10px 20px;
-            margin-right: 5px;
-            border: none;
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
+    .tab {
+        padding: 10px 20px;
+        margin-right: 5px;
+        border: none;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
         }
 
-        .tab:hover {
-            background-color: white;
+    .tab:hover {
+        background-color: white;
         }
 
-        /* Inhalte der Reiter */
-        .inhalt {
-            display: none;
-            padding: 30px;
-        }
+    /* Inhalte der Reiter */
+    .inhalt {
+        display: none;
+        padding: 30px;
+    }
 
         /* Nur der aktive Reiter wird angezeigt */
         .aktiv {
@@ -43,12 +54,16 @@
     </style>
 </head>
 <body>
-
-    <div class="tabs">
-        <button class="tab" onclick="zeigeTab('home')">Home</button>
-        <button class="tab" onclick="zeigeTab('daten')">Datenbank</button>
-        <button class="tab" onclick="zeigeTab('email')">E-Mail</button>
+    <div class="navigation">
+        <img src="https://images.seeklogo.com/logo-png/52/1/bnd-logo-png_seeklogo-528577.png" class="logo">
+        <div class="tabs">
+            <button class="tab" onclick="zeigeTab('home')">Home</button>
+            <button class="tab" onclick="zeigeTab('daten')">Datenbank</button>
+            <button class="tab" onclick="zeigeTab('email')">E-Mail</button>
+        </div>
     </div>
+        
+    
 
     <div id="home" class="inhalt aktiv">
         <h1>Wir sind die GARA. </h1>
