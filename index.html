@@ -28,19 +28,33 @@
         }
 
     .tab {
-        fontsize: 20px;
-        padding: 10px 20px;
-        margin-right: 5px;
-        border: none;
-        background-color: white;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        }
+    position: relative;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
 
-    .tab:hover {
-        background-color: white;
-        }
+/* Unterstreichung */
+.tab::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Beim Darüberfahren */
+.tab:hover::after {
+    width: 100%;
+    left: 0;
+}
 
     /* Inhalte der Reiter */
     .inhalt {
